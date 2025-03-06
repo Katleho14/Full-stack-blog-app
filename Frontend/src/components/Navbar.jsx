@@ -1,10 +1,19 @@
 import React from 'react'
-
+import logo from "../images/Logos.png"
 const Navbar = () => {
   return (
     <>
-  <div className="navbar flex items-center h-[100px] px-[100px] bg-red-500">
-
+  <div className="navbar flex items-center h-[100px] px-[100px] bg-[#0c0c0c] overflow-hidden">
+<div className="logo">
+    <img className='w-[240px]' src={logo} alt="" />
+</div>
+<div className="links flex items-center gap-[10]">
+<Link className='navLink'>Home</Link>
+ <Link className='navLink'>About</Link>
+  <Link className='navLink'>Blogs</Link> 
+  <Link className='navLink'>Services</Link> 
+  <Link className='navLink'>Contact</Link>
+</div>
   </div>
     </>
   )
