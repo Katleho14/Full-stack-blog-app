@@ -8,31 +8,31 @@ const SingleBlog = () => {
   const [data, setData] = useState(null);
   const [image, setImage] = useState("");
   let { blogId } = useParams();
-  const getBlog = () => {
-    fetch(api_base_url + "/getBlog", {
-      mode: "cors",
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        blogId: blogId,
-        token: localStorage.getItem("token")
-      })
-    }).then(res => res.json()).then(data => {
-      if (data.success) {
-        setData(data.blog);
-        setImage(data.blog.image);
-      }
-      else {
-        alert(data.msg)
-      }
-    })
-  };
-
   useEffect(() => {
-    getBlog()
-  }, [])
+    const getBlog = () => {
+      fetch(api_base_url + "/getBlog", {
+        mode: "cors",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          blogId: blogId,
+          token: localStorage.getItem("token")
+        })
+      }).then(res => res.json()).then(data => {
+        if (data.success) {
+          setData(data.blog);
+          setImage(data.blog.image);
+        }
+        else {
+          alert(data.msg)
+        }
+      })
+    };
+
+    getBlog();
+  }, [blogId])
   
   return (
     <>
