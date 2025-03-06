@@ -15,6 +15,14 @@ body{
 html{
   overflow-x: hidden;
 }
+
+:root{
+  --purple-600: #9333ea;
+  --purple-700: #6d28d9;
+  --bg-2: #0c0c0c;
+}
+
+
 .navLink {
   color: #fff;
   text-decoration: none;
@@ -49,4 +57,39 @@ width: 100%;
 
 .navLink.active{
   color: var(--purple-600);
+}
+
+.sp-text{
+  color: var(--purple-600);
+}
+
+.btnNormal{
+  padding: 10px;
+  min-width: 130px;
+  background-color: var(--purple-600);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: ease-in .3s;
+}
+
+.btnNormal:hover{
+  background-color: var(--purple-700);
+}
+
+
+.btnWhite{
+  padding: 10px;
+  min-width: 130px;
+  background-color: #f4f4f4;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: ease-in .3s;
+}
+
+.btnWhite:hover{
+  background-color: #fff;
 }
